@@ -65,11 +65,16 @@ public class GroceriesApplication {
         System.out.println("Enter item number to reomve");
         int numb=scanner.nextInt();
         scanner.nextLine();
-        groceriesList.removItem(numb);
+        groceriesList.removItem(numb-1);
     }
     public static void searchItem(){
         System.out.println("Enter the item name to search");
         String s=scanner.nextLine();
-        groceriesList.findItem(s);
+        if(groceriesList.findItem(s)!=null){
+            System.out.println("found "+s+" in your groceris list");
+        }else{
+            System.out.println("item "+s+" is not found in  groceris list");
+        }
+
     }
 }
